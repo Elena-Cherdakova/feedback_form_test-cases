@@ -6,7 +6,8 @@ describe("Проверка успешной отправки формы", () => 
      it('test-case', () => {
   
 cy.visit('https://www.testograf.ru/ru/blog/feedback-form-template');
-  cy.frameLoaded('#ttgraf-33')
+          cy.get('#ttgraf-33').scrollIntoView().should('be.visible');
+          cy.frameLoaded('#ttgraf-33');
 cy.iframe('#ttgraf-33').find('.question_107 > .content___fde8e27345b6df2af011 > .shortText > .input > .control___e16bbac759474cb49f55').type('Елена');
 cy.iframe('#ttgraf-33').find('.question_108 > .content___fde8e27345b6df2af011 > .shortText > .input > .control___e16bbac759474cb49f55').type('example@gmail.com');
 cy.iframe('#ttgraf-33').find('.question_109 > .content___fde8e27345b6df2af011 > .shortText > .input > .control___e16bbac759474cb49f55').type('89000000000');
